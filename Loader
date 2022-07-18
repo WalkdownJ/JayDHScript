@@ -1,0 +1,44 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Jay's Hub", "Ocean")
+
+if game.PlaceId == 2788229376 then
+-- Main
+    local Main = Window:NewTab("Main")
+    local MainSection = Tab:NewSection("About")
+
+
+    MainSection:NewTextBox("About GUI", "This is a new script made by WalkdownJ, This is my first gui made for da hood i hope u like it!", function(txt)
+        print(txt)
+    end)
+
+    local Player = Window:NewTab("Player")
+    local MainSection = Tab:NewSection("Player Movements")
+
+
+    PlayerSection:NewButton("Fly", "Click the button then x to fly and x again to stop flying", function()
+        loadstring(game:HttpGet('https://pastebin.com/qGkXtyx9'))()
+    end)
+
+
+    PlayerSection:NewButton("Noclip", "Click the button then K to noclip and K again to stop nocliping", function()
+        loadstring(game:HttpGet('https://pastebin.com/iFBQ7GMv'))()
+    end)
+
+
+
+    PlayerSection:NewToggle("SuperSpeed", "ToggleInfo", function(state)
+        if state then
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+        else
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        end
+    end)
+
+
+    PlayerSection:NewToggle("SuperJump", "ToggleInfo", function(state)
+        if state then
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+        else
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        end
+    end)
